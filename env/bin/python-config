@@ -1,4 +1,4 @@
-#!/home/arjunsingh/practice/fynd/backend/env/bin/python
+#!/home/arjunsingh/projects/fynd/backend/env/bin/python
 
 import sys
 import getopt

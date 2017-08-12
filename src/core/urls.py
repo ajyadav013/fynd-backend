@@ -17,14 +17,23 @@ from django.conf.urls import (url, include)
 from django.views.static import serve
 from django.conf import settings
 from django.contrib import admin
+from rest_framework.routers import DefaultRouter
+#from rest_framework_extensions.routers import ExtendedSimpleRouter
 
 from home import views as homeView
+from movie.views import (MovieViewSet, GenreViewSet)
+
+router = DefaultRouter()
+
+router.register(r'movies', MovieViewSet, base_name="Movie")
+router.register(r'genres', GenreViewSet, base_name="Genre") 
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth', include('authentication.urls')),
     url(r'^social', include('social.urls')),
-    url(r'^movies', include('movie.urls')),
+    url(r'', include(router.urls)),
     url(r'^$', homeView.Home.as_view(), name='home'),
 ]
 if not settings.DEBUG:

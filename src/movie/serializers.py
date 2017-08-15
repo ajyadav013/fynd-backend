@@ -35,11 +35,13 @@ class MovieSerializer(serializers.ModelSerializer):
 
     @transaction.atomic
     def update(self, instance, validated_data):
+        print('validated data', validated_data)
         genres = validated_data['genres']
         instance.name = validated_data['name']
         instance.popularity = validated_data['popularity']
         instance.director = validated_data['director']
         instance.imdbScore = validated_data['imdbScore']
+        instance.save()
         genre = []
         for genre_data in genres:
             genre.append(Genre.objects.filter(

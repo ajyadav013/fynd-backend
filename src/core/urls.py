@@ -18,9 +18,7 @@ from django.views.static import serve
 from django.conf import settings
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-#from rest_framework_extensions.routers import ExtendedSimpleRouter
 
-from home import views as homeView
 from movie.views import (MovieViewSet, GenreViewSet)
 
 router = DefaultRouter()
@@ -34,7 +32,6 @@ urlpatterns = [
     url(r'^auth', include('authentication.urls')),
     url(r'^social', include('social.urls')),
     url(r'', include(router.urls)),
-    url(r'^$', homeView.Home.as_view(), name='home'),
 ]
 if not settings.DEBUG:
     urlpatterns += [url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}), ]

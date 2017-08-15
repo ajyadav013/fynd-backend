@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'authentication',
-    'home',
     'social',
     'movie'
 ]

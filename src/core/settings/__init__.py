@@ -113,7 +113,8 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:5555',
-    '127.0.0.1:5555'
+    '127.0.0.1:5555',
+    'fynd-frontend.herokuapp.com'
 )
 
 CORS_REPLACE_HTTPS_REFERER = True

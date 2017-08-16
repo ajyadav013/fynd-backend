@@ -24,8 +24,8 @@ class GenreViewSet(viewsets.ModelViewSet):
     """
     Genre ViewSet for all genres
     """
-    #authentication_classes = api_settings.DEFAULT_AUTHENTICATION_CLASSES
-    #permission_classes = (IsAuthenticated, AdminUserPermissions)
+    authentication_classes = api_settings.DEFAULT_AUTHENTICATION_CLASSES
+    permission_classes = (IsAuthenticated, AdminUserPermissions)
     serializer_class = GenreSerializer
 
     def get_queryset(self):
@@ -36,8 +36,8 @@ class MovieViewSet(viewsets.ModelViewSet):
     """
     Movie View to create, update, delete movies
     """
-    #authentication_classes = api_settings.DEFAULT_AUTHENTICATION_CLASSES
-    #permission_classes = (IsAuthenticated, AdminUserPermissions)
+    authentication_classes = api_settings.DEFAULT_AUTHENTICATION_CLASSES
+    permission_classes = (IsAuthenticated, AdminUserPermissions)
     serializer_class = MovieSerializer
 
     def get_queryset(self):

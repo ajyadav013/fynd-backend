@@ -35,7 +35,6 @@ class MovieSerializer(serializers.ModelSerializer):
 
     @transaction.atomic
     def update(self, instance, validated_data):
-        print('validated data', validated_data)
         genres = validated_data['genres']
         instance.name = validated_data['name']
         instance.popularity = validated_data['popularity']

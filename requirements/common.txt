@@ -1,4 +1,4 @@
-Django==1.11.3
+Django==2.2.24
 django-custom-user==0.7
 dj-database-url==0.4.2
 psycopg2==2.7.1
